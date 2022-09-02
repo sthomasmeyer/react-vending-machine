@@ -1,0 +1,18 @@
+.Snacks {
+  display: flex;
+  margin-top: 2.5%;
+}
+
+.Snacks nav {
+  border-right: solid 1px;
+  padding: 1rem;
+}
+
+.Snacks-element {
+  display: block;
+  margin: 1rem 0;
+}
+
+.Snacks-element:hover {
+  background-color: silver;
+}

@@ -1,0 +1,26 @@
+.VendingMachine {
+  width: 888px;
+  border: 5px solid lightskyblue;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  align-items: center;
+}
+
+.VendingMachine h1 {
+  color: midnightblue;
+  text-align: center;
+}
+
+.VendingMachine .VendingMachine-static-link {
+  position: relative;
+  display: inline;
+  border: 1px solid lightskyblue;
+  border-radius: 10%;
+  margin: 10px;
+  padding: 7.5px;
+  font-variant: small-caps;
+}
+
+.VendingMachine .VendingMachine-static-link:hover {
+  background-color: silver;
+}
