@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import Snacks from './routes/Snacks';
-import Snack from './routes/Snack';
-import Drinks from './routes/Drinks';
-import Drink from './routes/Drink';
+import Items from './routes/Items';
+import Item from './routes/Item';
+import DefaultItem from './routes/DefaultItem';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,31 +13,23 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App />}>
-        <Route path='/snacks' element={<Snacks />}>
+        <Route path='/snacks' element={<Items category={'Snacks'} />}>
           <Route
             // The following 'index' route acts as the default child...
             // route for its parent.
             index
-            element={
-              <div className='default-message'>
-                <p>Choose a snack from the vending machine.</p>
-              </div>
-            }
+            element={<DefaultItem param={'snack'} />}
           />
-          <Route path=':snackId' element={<Snack />} />
+          <Route path=':id' element={<Item category={'Snacks'} />} />
         </Route>
-        <Route path='/drinks' element={<Drinks />}>
+        <Route path='/drinks' element={<Items category={'Drinks'} />}>
           <Route
             // The following 'index' route acts as the default child...
             // route for its parent.
             index
-            element={
-              <div className='default-message'>
-                <p>Choose a drink from the vending machine.</p>
-              </div>
-            }
+            element={<DefaultItem param={'drink'} />}
           />
-          <Route path=':drinkId' element={<Drink />} />
+          <Route path=':id' element={<Item category={'Drinks'} />} />
         </Route>
       </Route>
       {/* The catch-all path ['*'] will match if, and only if none of...

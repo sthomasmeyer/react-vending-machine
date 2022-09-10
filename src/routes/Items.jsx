@@ -4,20 +4,26 @@ import {
   useSearchParams,
   useLocation
 } from 'react-router-dom';
-import { getDrinks } from '../mockData';
-import './Drinks.css';
+import { getDrinks, getSnacks } from '../mockData';
+import './Items.css';
 
 const QueryNavLink = ({ to, ...props }) => {
   let location = useLocation();
   return <NavLink to={to + location.search} {...props} />;
 };
 
-const Drinks = () => {
-  let drinks = getDrinks();
+const Items = ({ category }) => {
+  let items;
+  if (category === 'Drinks') {
+    items = getDrinks();
+  } else {
+    items = getSnacks();
+  }
+
   let [searchParams, setSearchParams] = useSearchParams();
 
   return (
-    <div className='Drinks'>
+    <div className='Items'>
       <nav>
         <input
           value={searchParams.get('filter') || ''}
@@ -26,20 +32,20 @@ const Drinks = () => {
             filter ? setSearchParams({ filter }) : setSearchParams({});
           }}
         />
-        {drinks
-          .filter((drink) => {
+        {items
+          .filter((item) => {
             let filter = searchParams.get('filter');
             if (!filter) return true;
-            let name = drink.name.toLowerCase();
+            let name = item.name.toLowerCase();
             return name.startsWith(filter.toLowerCase());
           })
-          .map((drink) => (
+          .map((item) => (
             <QueryNavLink
-              className='Drinks-element'
-              to={`/drinks/${drink.id}`}
-              key={drink.id}
+              className='Items-element'
+              to={`/${category}/${item.id}`}
+              key={item.id}
             >
-              {drink.name}
+              {item.name}
             </QueryNavLink>
           ))}
       </nav>
@@ -48,4 +54,4 @@ const Drinks = () => {
   );
 };
 
-export default Drinks;
+export default Items;

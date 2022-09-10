@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Items"
+  >
+    <nav>
+      <input
+        value=""
+      />
+      <a
+        class="Items-element"
+        href="/Snacks/04227dca-d83a-4356-96aa-de23a77398d4"
+      >
+        Reese's Cups
+      </a>
+      <a
+        class="Items-element"
+        href="/Snacks/6bf22ebf-8f52-414d-9e26-a86156dbcb9b"
+      >
+        Snickers
+      </a>
+      <a
+        class="Items-element"
+        href="/Snacks/df7d24d6-1625-4a73-9585-5dcc4c328645"
+      >
+        Lori Harvey
+      </a>
+    </nav>
+  </div>
+</DocumentFragment>
+`;

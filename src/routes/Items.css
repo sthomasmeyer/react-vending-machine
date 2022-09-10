@@ -1,18 +1,18 @@
-.Drinks {
+.Items {
   display: flex;
   margin-top: 2.5%;
 }
 
-.Drinks nav {
+.Items nav {
   border-right: solid 1px;
   padding: 1rem;
 }
 
-.Drinks-element {
+.Items-element {
   display: block;
   margin: 1rem 0;
 }
 
-.Drinks-element:hover {
+.Items-element:hover {
   background-color: silver;
 }
