@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { getDrink } from '../mockData';
-import './drink.css';
+import './Drink.css';
 
 const Drink = () => {
   let params = useParams();

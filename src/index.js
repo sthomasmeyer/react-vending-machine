@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import Snacks from './routes/snacks';
-import Snack from './routes/snack';
-import Drinks from './routes/drinks';
-import Drink from './routes/drink';
+import Snacks from './routes/Snacks';
+import Snack from './routes/Snack';
+import Drinks from './routes/Drinks';
+import Drink from './routes/Drink';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -41,6 +41,16 @@ root.render(
           <Route path=':drinkId' element={<Drink />} />
         </Route>
       </Route>
+      {/* The catch-all path ['*'] will match if, and only if none of...
+      the other established routes do.  */}
+      <Route
+        path='*'
+        element={
+          <main>
+            <p>These are not the droids you're looking for.</p>
+          </main>
+        }
+      />
     </Routes>
   </BrowserRouter>
 );

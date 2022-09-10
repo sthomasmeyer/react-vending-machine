@@ -5,7 +5,7 @@ import {
   useLocation
 } from 'react-router-dom';
 import { getDrinks } from '../mockData';
-import './drinks.css';
+import './Drinks.css';
 
 const QueryNavLink = ({ to, ...props }) => {
   let location = useLocation();

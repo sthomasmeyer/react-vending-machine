@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { getSnack } from '../mockData';
-import './snack.css';
+import './Snack.css';
 
 const Snack = () => {
   let params = useParams();
